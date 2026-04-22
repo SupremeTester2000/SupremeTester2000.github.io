@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-
+import { CertificatesService } from '../services/certificates-service/certificates';
 @Component({
   selector: 'app-certificates',
   standalone: false,
   templateUrl: './certificates.html',
   styleUrl: './certificates.css',
 })
-export class Certificates {}
+export class Certificates {
+  constructor(public certificatesService: CertificatesService) {
+    console.log(this.certificatesService.accesoCertificates);
+   }
+}

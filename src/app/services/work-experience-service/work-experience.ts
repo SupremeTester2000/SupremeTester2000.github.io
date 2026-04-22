@@ -3,4 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class WorkExperience {}
+export class WorkExperienceService {
+  accesoWorkExperience = "work experience running..."
+
+  constructor() { }
+}

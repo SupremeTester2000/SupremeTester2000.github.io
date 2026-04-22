@@ -3,4 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class Certificates {}
+export class CertificatesService {
+  accesoCertificates = "certificates running..."
+
+  constructor() { }
+}
