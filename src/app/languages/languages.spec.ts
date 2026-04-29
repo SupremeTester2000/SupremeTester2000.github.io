@@ -8,8 +8,9 @@ describe('Languages', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [Languages],
-    }).compileComponents();
+      declarations: [Languages]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(Languages);
     component = fixture.componentInstance;

@@ -1,2 +1,27 @@
-<p>header works!</p>
-<p>{{ HeaderService.accesoHeader }}</p>
+<header class="header">
+  <div class="header-content">
+    <div class="header-main" *ngFor="let item of headerData$ | async">
+      <div class="header-top">
+        <div class="name-section">
+          <h1 class="name">{{ item.fullName || 'Your Name' }}</h1>
+          <p class="summary">{{ item.summary }}</p>
+        </div>
+        <div class="image-section" *ngIf="item.imageUrl">
+          <img [src]="item.imageUrl" [alt]="item.fullName" class="profile-image">
+        </div>
+      </div>
+    </div>
+    <div class="contact-info" *ngFor="let item of headerData$ | async">
+      <div class="contact-item" *ngIf="item.email">
+        <strong>{{ item.email }}</strong>
+      </div>
+      <div class="contact-item" *ngIf="item.phone">
+        <strong>{{ item.phone }}</strong>
+      </div>
+      <div class="contact-item" *ngIf="item.location">
+        <strong>{{ item.location }}</strong>
+      </div>
+    </div>
+  </div>
+  <hr>
+</header>

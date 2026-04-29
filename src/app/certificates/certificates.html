@@ -1,2 +1,9 @@
-<p>certificates works!</p>
-<p>{{ certificatesService.accesoCertificates }}</p>
+<section class="certificates">
+  <h2>Achievements & Certificates</h2>
+  <div class="certificate-list">
+    <div class="certificate-item" *ngFor="let item of certificatesData$ | async">
+      <h4>{{ item.name }}</h4>
+      <p class="issuer">{{ item.issuer }} - {{ item.year }}</p>
+    </div>
+  </div>
+</section>

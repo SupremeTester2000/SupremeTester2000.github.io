@@ -1,2 +1,8 @@
-<p>interests works!</p>
-<p>{{ interestsService.accesoInterests }}</p>
+<section class="interests">
+  <h2>Interests</h2>
+  <div class="interests-list">
+    <span class="interest-tag" *ngFor="let item of interestsData$ | async; let last = last">
+      {{ item.name }}<span *ngIf="!last"> | </span>
+    </span>
+  </div>
+</section>
