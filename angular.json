@@ -6,10 +6,11 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "mycv": {
+    "cv-musk-style": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "style": "scss",
           "standalone": false
         },
         "@schematics/angular:directive": {
@@ -28,6 +29,7 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -35,7 +37,7 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ]
           },
           "configurations": {
@@ -66,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mycv:build:production"
+              "buildTarget": "cv-musk-style:build:production"
             },
             "development": {
-              "buildTarget": "mycv:build:development"
+              "buildTarget": "cv-musk-style:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -1,1 +1,11 @@
-<p>skills works!</p>
+<section class="skills">
+  <h2>Skills & Competences</h2>
+  <div class="skills-grid">
+    <div class="skill-item" *ngFor="let item of skillsData$ | async">
+      <div class="skill-name">{{ item.name }}</div>
+      <div class="skill-bar">
+        <div class="skill-progress" [style.width.%]="item.proficiency || 50"></div>
+      </div>
+    </div>
+  </div>
+</section>

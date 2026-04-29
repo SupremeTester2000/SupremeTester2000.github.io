@@ -1,1 +1,12 @@
-<p>work-experience works!</p>
+<section class="work-experience">
+  <h2>Work Experience</h2>
+  <div class="experience-item" *ngFor="let item of workExperienceData$ | async">
+    <div class="experience-header">
+      <div class="date-range">{{ item.startDate }} - {{ item.endDate || 'Present' }}</div>
+      <div class="location">{{ item.location }}</div>
+    </div>
+    <h3 class="title">{{ item.title }}</h3>
+    <p class="company">{{ item.company }}</p>
+    <p class="description">{{ item.description }}</p>
+  </div>
+</section>

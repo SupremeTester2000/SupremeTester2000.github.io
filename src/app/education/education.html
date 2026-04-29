@@ -1,1 +1,10 @@
-<p>education works!</p>
+<section class="education">
+  <h2>Education</h2>
+  <div class="education-item" *ngFor="let item of educationData$ | async">
+    <div class="education-header">
+      <div class="date-range">{{ item.startDate }} - {{ item.endDate }}</div>
+    </div>
+    <h3 class="degree">{{ item.degree }}</h3>
+    <p class="school">{{ item.school }}</p>
+  </div>
+</section>

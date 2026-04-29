@@ -1,1 +1,8 @@
-<p>languages works!</p>
+<section class="languages">
+  <h2>Languages</h2>
+  <div class="language-list">
+    <span class="language-item" *ngFor="let item of languagesData$ | async; let last = last">
+      {{ item.name }}<span *ngIf="!last"> | </span>
+    </span>
+  </div>
+</section>

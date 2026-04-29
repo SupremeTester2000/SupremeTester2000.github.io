@@ -1,29 +1,45 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { Header } from './header/header';
-import { WorkExperience } from './work-experience/work-experience';
-import { Education } from './education/education';
-import { Skills } from './skills/skills';
-import { Certificates } from './certificates/certificates';
-import { Languages } from './languages/languages';
-import { Interests } from './interests/interests';
+import { HeaderComponent } from './header/header';
+import { WorkExperienceComponent } from './work-experience/work-experience';
+import { EducationComponent } from './education/education';
+import { LanguagesComponent } from './languages/languages';
+import { SkillsComponent } from './skills/skills';
+import { InterestsComponent } from './interests/interests';
+import { CertificatesComponent } from './certificates/certificates';
+import { CardContainer } from './card-container/card-container';
+import { LeftContainer } from './left-container/left-container';
+import { RightContainer } from './right-container/right-container';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     App,
-    Header,
-    WorkExperience,
-    Education,
-    Skills,
-    Certificates,
-    Languages,
-    Interests,
+    HeaderComponent,
+    WorkExperienceComponent,
+    EducationComponent,
+    LanguagesComponent,
+    SkillsComponent,
+    InterestsComponent,
+    CertificatesComponent,
+    CardContainer,
+    LeftContainer,
+    RightContainer
   ],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners()],
-  bootstrap: [App],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+  ],
+  bootstrap: [App]
 })
-export class AppModule {}
+export class AppModule { }
