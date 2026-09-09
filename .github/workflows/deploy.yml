@@ -4,6 +4,7 @@ on:
   push:
     branches: ["master"]
 
+# Permisos requeridos para desplegar en GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -34,7 +35,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/SupremeTester2000.github.io/browser
+          path: dist/cv-musk-style/browser
 
   deploy:
     environment:
