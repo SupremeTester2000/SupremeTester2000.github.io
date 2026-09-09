@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Build Angular app
+      - name: Build Angular app (Clean Build)
         run: npx ng build --configuration production --base-href / --output-path=dist/browser
 
       - name: Upload artifact
