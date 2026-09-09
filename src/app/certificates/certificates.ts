@@ -19,12 +19,15 @@ export class CertificatesComponent implements OnInit {
     this.certificatesData$ = this.certificatesService.getAll();
   }
 
-
+  /**
+   * Valida si un string es una URL válida
+   */
   isValidUrl(url: string): boolean {
     if (!url || typeof url !== 'string') {
       return false;
     }
     try {
+      // Validación básica: debe comenzar con http:// o https://
       return url.startsWith('http://') || url.startsWith('https://');
     } catch {
       return false;
