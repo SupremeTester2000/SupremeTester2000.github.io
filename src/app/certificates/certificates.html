@@ -3,7 +3,17 @@
   <div class="certificate-list">
     <div class="certificate-item" *ngFor="let item of certificatesData$ | async">
       <h4>{{ item.name }}</h4>
-      <p class="issuer">{{ item.issuer }} - {{ item.year }}</p>
+      <p class="issuer">
+        <ng-container *ngIf="isValidUrl(item.issuer)">
+          <a [href]="item.issuer" target="_blank" rel="noopener noreferrer" class="certificate-link">
+            Ver certificado ↗
+          </a>
+        </ng-container>
+        <ng-container *ngIf="!isValidUrl(item.issuer) && item.issuer">
+          {{ item.issuer }}
+        </ng-container>
+        <span class="year"> - {{ item.year }}</span>
+      </p>
     </div>
   </div>
 </section>

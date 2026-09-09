@@ -18,4 +18,16 @@ export class CertificatesComponent implements OnInit {
   ngOnInit() {
     this.certificatesData$ = this.certificatesService.getAll();
   }
+
+
+  isValidUrl(url: string): boolean {
+    if (!url || typeof url !== 'string') {
+      return false;
+    }
+    try {
+      return url.startsWith('http://') || url.startsWith('https://');
+    } catch {
+      return false;
+    }
+  }
 }
